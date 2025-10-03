@@ -1,0 +1,350 @@
+/* Professional Style.css */
+
+/* --- Color Palette & Variables --- */
+:root {
+    --color-primary: #007bff;          /* A classic, professional blue for main accents */
+    --color-secondary: #6c757d;        /* A muted gray for secondary text and borders */
+    --color-background-light: #f8f9fa; /* A very light gray for the main body background */
+    --color-background-card: #ffffff;  /* Pure white for card backgrounds */
+    --color-text-dark: #212529;        /* A dark gray for primary text */
+    --color-text-muted: #6c757d;       /* A lighter gray for muted text like dates */
+    --color-border: #dee2e6;           /* A subtle border color */
+    --color-hover: #e9ecef;            /* A light gray for button hover states */
+    --color-link: #007bff;             /* Same as primary for consistent link color */
+    
+    --shadow-subtle: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* --- General Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-background-light);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3; /* A slightly darker blue on hover */
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--color-background-card);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.header nav a, .header button {
+    margin-left: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: all 0.2s ease-in-out;
+}
+
+.header button#logout-btn {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+}
+
+.header nav a:hover, .header button:hover {
+    color: var(--color-primary);
+    background-color: var(--color-hover);
+}
+
+/* --- Content Sections --- */
+.post-form-section, .feed-section, .profile-header {
+    background-color: var(--color-background-card);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-subtle);
+    margin-bottom: 1.5rem;
+}
+
+.post-form-section h2, .feed-section h2, .profile-header h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--color-text-dark);
+}
+
+/* --- Forms & Inputs --- */
+.post-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.post-form button {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    float: right;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.post-form button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Post Card --- */
+.post {
+    background-color: var(--color-background-card);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-subtle);
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.post:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.post-author {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.post-content {
+    margin: 0.5rem 0;
+    color: var(--color-text-dark);
+}
+
+.post-actions {
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.post-actions button:hover {
+    color: var(--color-primary);
+}
+
+/* --- Comments Section --- */
+.comments-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.comments-section h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+.comment {
+    background-color: var(--color-background-light);
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.comment-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.comment-form button {
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Profile Page Styling --- */
+.profile-header {
+    text-align: center;
+}
+
+.profile-header h2 {
+    font-size: 2rem;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+    color: var(--color-text-muted);
+    margin: 0.25rem 0;
+}
+
+.profile-header button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.profile-header button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Modal Styling --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--color-background-card);
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    width: 90%;
+    max-width: 450px;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.modal-content input {
+    width: calc(100% - 2rem);
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border: none;
+    cursor: pointer;
+    width: calc(100% - 2rem);
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.modal-content p {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+}
+
+.modal-content p a {
+    font-weight: bold;
+}
+
+.close-btn {
+    color: var(--color-text-muted);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: var(--color-text-dark);
+}
